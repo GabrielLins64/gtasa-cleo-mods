@@ -3,6 +3,8 @@ SCRIPT_START
 NOP
 
 LVAR_INT model
+CONST_INT MAX_MODEL 611
+CONST_INT MIN_MODEL 400
 
 model = 400
 
@@ -10,26 +12,26 @@ mainloop:
 WAIT 0
 
 IF IS_KEY_PRESSED VK_KEY_U
-  IF model < 611
+  IF model < MAX_MODEL
     model += 1
     PRINT_FORMATTED_NOW "Modelo de carro %i selecionado" 3000 model
     WHILE IS_KEY_PRESSED VK_KEY_U // aguardar enquanto ainda estou segurando a tecla U
       WAIT 0
     ENDWHILE
   ELSE
-    PRINT_FORMATTED_NOW "Nao ha mais modelos alem deste (611)" 3000
+    PRINT_FORMATTED_NOW "Nao ha mais modelos alem deste (%i)" 3000 model
   ENDIF
 ENDIF
 
 IF IS_KEY_PRESSED VK_KEY_J
-  IF model > 400
+  IF model > MIN_MODEL
     model -= 1
     PRINT_FORMATTED_NOW "Modelo de carro %i selecionado" 3000 model
     WHILE IS_KEY_PRESSED VK_KEY_J
       WAIT 0
     ENDWHILE
   ELSE
-    PRINT_FORMATTED_NOW "Nao ha mais modelos alem deste (400)" 3000
+    PRINT_FORMATTED_NOW "Nao ha mais modelos alem deste (%i)" 3000 model
   ENDIF
 ENDIF
 
