@@ -1,0 +1,40 @@
+SCRIPT_START
+{
+NOP
+
+LVAR_INT scplayer
+LVAR_INT car
+LVAR_FLOAT speed
+GET_PLAYER_CHAR 0 scplayer
+
+WHILE TRUE
+  WAIT 0
+
+  IF IS_KEY_PRESSED VK_LCONTROL
+  AND IS_CHAR_IN_ANY_CAR scplayer
+    GET_CAR_CHAR_IS_USING scplayer car
+    GET_CAR_SPEED car speed
+    speed *= 2.0
+    SET_CAR_FORWARD_SPEED car speed
+
+    WHILE IS_KEY_PRESSED VK_LCONTROL
+      WAIT 0
+    ENDWHILE
+  ENDIF
+
+  IF IS_KEY_PRESSED VK_RCONTROL
+  AND IS_CHAR_IN_ANY_CAR scplayer
+    GET_CAR_CHAR_IS_USING scplayer car
+    GET_CAR_SPEED car speed
+    speed = 0.0
+    SET_CAR_FORWARD_SPEED car speed
+    SET_CAR_CRUISE_SPEED car speed
+
+    WHILE IS_KEY_PRESSED VK_RCONTROL
+      WAIT 0
+    ENDWHILE
+  ENDIF
+
+ENDWHILE
+}
+SCRIPT_END
