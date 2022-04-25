@@ -1,0 +1,30 @@
+SCRIPT_START
+{
+NOP
+
+LVAR_INT scplayer
+GET_PLAYER_CHAR 0 scplayer
+
+WHILE TRUE
+  WAIT 0
+
+  IF IS_KEY_PRESSED VK_KEY_H
+  AND IS_KEY_PRESSED VK_TAB
+  AND IS_CHAR_IN_ANY_CAR scplayer
+    LVAR_INT car
+    GET_CAR_CHAR_IS_USING scplayer car
+
+    LVAR_FLOAT roll
+    GET_CAR_ROLL car roll
+    roll = 180.0
+    SET_CAR_ROLL car roll
+
+    WHILE IS_KEY_PRESSED VK_KEY_H
+    OR IS_KEY_PRESSED VK_TAB
+      WAIT 0
+    ENDWHILE
+  ENDIF
+
+ENDWHILE
+}
+SCRIPT_END
