@@ -103,6 +103,17 @@ WHILE TRUE
       ENDWHILE
     ENDIF
 
+    // Super Up
+    IF IS_KEY_PRESSED VK_KEY_U
+      GET_CHAR_COORDINATES scplayer playerX playerY playerZ
+      playerZ += 5.0
+      SET_CHAR_COORDINATES scplayer playerX playerY playerZ
+
+      WHILE IS_KEY_PRESSED VK_KEY_U
+        WAIT 0
+      ENDWHILE
+    ENDIF
+
     // Down
     IF IS_KEY_PRESSED VK_LCONTROL
       GET_CHAR_COORDINATES scplayer playerX playerY playerZ
@@ -110,6 +121,17 @@ WHILE TRUE
       SET_CHAR_COORDINATES scplayer playerX playerY playerZ
 
       WHILE IS_KEY_PRESSED VK_LCONTROL
+        WAIT 0
+      ENDWHILE
+    ENDIF
+
+    // Super Down
+    IF IS_KEY_PRESSED VK_KEY_J
+      GET_CHAR_COORDINATES scplayer playerX playerY playerZ
+      playerZ -= 7.0
+      SET_CHAR_COORDINATES scplayer playerX playerY playerZ
+
+      WHILE IS_KEY_PRESSED VK_KEY_J
         WAIT 0
       ENDWHILE
     ENDIF

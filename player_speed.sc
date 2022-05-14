@@ -38,11 +38,11 @@ SCRIPT_END
   toggle_run:
   IF is_active = TRUE
     PRINT_FORMATTED_NOW "Deactivated run!" 3000
-    WAIT 1500
+    WAIT 500
     is_active = FALSE
   ELSE
     PRINT_FORMATTED_NOW "Activated run!" 3000
-    WAIT 1500
+    WAIT 500
     is_active = TRUE
   ENDIF
 
