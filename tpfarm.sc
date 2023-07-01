@@ -15,7 +15,7 @@ WHILE TRUE
     LVAR_FLOAT targetX, targetY, targetZ
     targetX = -377.73
     targetY = -1403.91
-    targetZ = -24.94
+    targetZ = 25.0
 
     SET_CHAR_COORDINATES scplayer targetX targetY targetZ
     PRINT_FORMATTED_NOW "Coordenadas (%i, %i, %i)" 3000 targetX targetY targetZ
