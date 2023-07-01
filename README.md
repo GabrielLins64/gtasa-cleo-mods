@@ -28,7 +28,17 @@ Repo for custom GTA SA Cleo Mods and tutorials
 git clone https://github.com/thelink2012/gta3sc.git
 ```
 
-2. Then go into the folder and build the project:
+2. Fix commands TRUE, RETURN_TRUE and RETURN_FALSE
+
+After some odd update, those keywords stopped working. So, before building add the following lines in `gta3sc/config/gtasa/cleo.xml` **(Inside the \<Command\> tag)**:
+
+```xml
+<Command ID="0x485" Name="TRUE"/>
+<Command ID="0x485" Name="RETURN_TRUE"/>
+<Command ID="0x59a" Name="RETURN_FALSE"/>
+```
+
+3. Then go into the folder and build the project:
 
 ```shell
 cd gta3sc
@@ -38,7 +48,7 @@ cmake ..
 make
 ```
 
-In order to make the compiler available globally, and activate the recommended flags, append the following alias in your `.bash_aliases`:
+4. In order to make the compiler available globally, and activate the recommended flags, append the following alias in your `.bash_aliases`:
 
 ```shell
 alias gta3sc="/the/path/to/your/build/gta3sc --config=gtasa --guesser -fbreak-continue -fno-entity-tracking -fcleo --cs"
