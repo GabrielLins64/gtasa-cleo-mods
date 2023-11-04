@@ -7,5 +7,4 @@ source ~/.bash_aliases
 filename=$1
 
 gta3sc "$filename" && \
-sudo mv "${filename::-3}.cs" .. && \
-echo "Compiled and moved to previous directory!"
+echo "Script $filename successfully compiled!"
