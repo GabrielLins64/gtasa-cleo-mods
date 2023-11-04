@@ -13,11 +13,12 @@ WHILE TRUE
   AND IS_KEY_PRESSED VK_KEY_J
 
     LVAR_FLOAT targetX, targetY, targetZ
-    targetX = -377.73
-    targetY = -1403.91
-    targetZ = 25.0
+    targetX = -381.10
+    targetY = -1426.96
+    targetZ = 26.0
 
     SET_CHAR_COORDINATES scplayer targetX targetY targetZ
+    SET_CHAR_HEADING scplayer 270.0
     PRINT_FORMATTED_NOW "Coordenadas (%i, %i, %i)" 3000 targetX targetY targetZ
 
     WHILE IS_KEY_PRESSED VK_KEY_J
