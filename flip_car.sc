@@ -16,8 +16,9 @@ WHILE TRUE
 
     LVAR_FLOAT roll
     GET_CAR_ROLL car roll
-    roll = 180.0
+    roll = 0.0
     SET_CAR_ROLL car roll
+    PRINT_FORMATTED_NOW "Car flipped!" 2000
 
     WHILE IS_KEY_PRESSED VK_KEY_H
     OR IS_KEY_PRESSED VK_TAB
